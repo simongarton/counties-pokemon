@@ -1,0 +1,25 @@
+.pokemon {
+  text-align: center;
+  background-color: white;
+  min-height: 100%;
+}
+
+.pokemon-header {
+  font-size: calc(10px + 2vmin);
+  color: rgba(60, 110, 170, 1);
+}
+
+.pokemon-list {
+  color: rgb(200, 150, 20);
+  text-align: left;
+  font-size: 2vh;
+}
+
+.pokemon-container {
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

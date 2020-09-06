@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from './static/pokemon.jpeg';
-import './App.css';
+import logo from '../static/pokemon.jpeg';
+import './Main.css';
 
-class App extends Component {
+class Main extends Component {
   constructor(props) {
     super(props);
 
@@ -23,7 +23,7 @@ class App extends Component {
       console.log(item);
       const pokemon = {
         name: item['name'],
-        pageUrl: item['url'],
+        pageUrl: './' + item['url'].replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/', ''),
         dataUrl: item['url'],
         fullName: item['name'].replace(/\w\S*/g, function (txt) {
           return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
@@ -37,25 +37,23 @@ class App extends Component {
   render() {
     const data = this.state.data ? this.processData(this.state.data) : [];
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1>My Pokedex</h1>
-          <ul>
-            {data.map((value, index) => {
-              return (
-                <li className="App-list" key={index}>
-                  <a className="App-link" href={value['dataUrl']}>
-                    {value['fullName']}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </header>
+      <div className="main">
+        <img src={logo} className="main-logo" alt="logo" />
+        <h1 className="main-header"> My Pokedex</h1>
+        <ul>
+          {data.map((value, index) => {
+            return (
+              <li className="main-list" key={index}>
+                <a className="main-link" href={value['pageUrl']}>
+                  {value['fullName']}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     );
   }
 }
 
-export default App;
+export default Main;

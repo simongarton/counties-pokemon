@@ -1,0 +1,20 @@
+.main {
+  text-align: center;
+  background-color: white;
+}
+
+.main-logo {
+  height: 10vmin;
+  pointer-events: none;
+}
+
+.main-header {
+  font-size: calc(10px + 2vmin);
+  color: rgba(60, 110, 170, 1);
+}
+
+.main-list {
+  color: rgb(200, 150, 20);
+  text-align: left;
+  font-size: 2vh;
+}
