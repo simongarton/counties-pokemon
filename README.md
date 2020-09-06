@@ -20,7 +20,12 @@ This should open up your local browser with the [demo](http://localhost:3000/)
 
 A live demo is available on [here](https://counties-c84ea.web.app/), hosted on Firebase.
 
+As required, if you know the name of a Pokemon, you can go directly to it : e.g. [Pikachu](https://counties-c84ea.web.app/pikachu)
+
 ## Discussion points
 
 Commit 0ab03c915c9e0c2b741a6c2f5f99813f018359c8 "Code review, cleanup." is the basic app as expected by the test.
 I then added some extra stuff to make it prettier - sprite images and some more stats. Next steps would be to consider the other information available in the API - it's quite detailed ! - and possibly set up more links; the application as it stands is reasonably responsive, but could be improved, especially if I structured the information into 'cards' or something similar.
+
+![Pokedex](pokedex.png 'Pokedex')
+![Caterpie](caterpie.png 'Caterpie')
