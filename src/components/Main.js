@@ -46,9 +46,7 @@ class Main extends Component {
             {data.map((value, index) => {
               return (
                 <li className="main-list" key={index}>
-                  <a className="main-link" href={value['pageUrl']}>
-                    {value['fullName']}
-                  </a>
+                  <a href={value['pageUrl']}>{value['fullName']}</a>
                 </li>
               );
             })}

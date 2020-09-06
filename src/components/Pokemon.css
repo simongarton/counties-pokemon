@@ -14,3 +14,8 @@
   margin: 50px;
   color: rgba(60, 110, 170, 1);
 }
+
+li:before {
+  content: '';
+  margin-left: -50px;
+}
