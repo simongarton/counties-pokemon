@@ -39,20 +39,16 @@ class Pokemon extends Component {
     const name = this.state.data.name.replace(/\w\S*/g, function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
-    const types = this.state.data.types;
+    const types = [];
+    this.state.data.types.forEach(function (item, index) {
+      types.push(item.type.name);
+    });
+    const typeMessage = 'Types : ' + types.join(', ');
     return (
       <div className="pokemon">
         {' '}
         <h1 className="pokemon-header">{name}</h1>
-        <ul>
-          {types.map((value, index) => {
-            return (
-              <li className="pokemon-list" key={index}>
-                {value.type.name}
-              </li>
-            );
-          })}
-        </ul>
+        <p className="pokemon-types">{typeMessage}</p>
       </div>
     );
   }
