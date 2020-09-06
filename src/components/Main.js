@@ -36,12 +36,12 @@ class Main extends Component {
   render() {
     const data = this.state.data ? this.processData(this.state.data) : [];
     return (
-      <div className="container">
-        <div className="main">
-          <img src={logo} className="main-logo" alt="logo" />
-          <h1 className="main-header"> My Pokedex</h1>
+      <div className="main">
+        <div className="main-header">
+          <img src={logo} className="main-logo" alt="Pokemon logo" />
+          <h1>My Pokedex</h1>
         </div>
-        <div className="rest">
+        <div className="main-pokemon-list">
           <ul>
             {data.map((value, index) => {
               return (

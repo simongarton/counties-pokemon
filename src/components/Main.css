@@ -1,14 +1,15 @@
-.container {
+.main {
   background-color: white;
 }
 
-.main {
+.main-header {
   position: fixed;
   text-align: center;
   width: 100%;
+  color: rgba(60, 110, 170, 1);
 }
 
-.rest {
+.main-pokemon-list {
   position: relative;
   top: 100px;
 }
@@ -16,11 +17,6 @@
 .main-logo {
   height: 10vmin;
   pointer-events: none;
-}
-
-.main-header {
-  font-size: calc(10px + 2vmin);
-  color: rgba(60, 110, 170, 1);
 }
 
 .main-list {

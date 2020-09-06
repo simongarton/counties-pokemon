@@ -24,18 +24,20 @@ class Pokemon extends Component {
   render() {
     if (this.state.error) {
       return (
-        <div className="pokemon-container">
+        <div className="pokemon">
           <h1 className="pokemon-header">Sorry, can't catch that Pokemon ...</h1>
         </div>
       );
     }
+
     if (!this.state.data) {
       return (
-        <div className="pokemon-container">
+        <div className="pokemon">
           <h1 className="pokemon-header">Gotta catch this one first ...</h1>
         </div>
       );
     }
+
     const name = this.state.data.name.replace(/\w\S*/g, function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
@@ -44,6 +46,7 @@ class Pokemon extends Component {
       types.push(item.type.name);
     });
     const typeMessage = 'Types : ' + types.join(', ');
+
     return (
       <div className="pokemon">
         {' '}
