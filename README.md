@@ -14,11 +14,11 @@ To build this application, start the terminal, move into the root directory, and
 yarn start
 ```
 
-This should open up :
+This should open up your local browser with the [demo](http://localhost:3000/)
 
-```
-http://localhost:3000/
-```
+## Live demo
+
+A live demo is available on [here](https://counties-c84ea.web.app/), hosted on Firebase.
 
 ## Discussion points
 
