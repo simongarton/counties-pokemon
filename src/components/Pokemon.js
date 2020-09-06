@@ -6,25 +6,29 @@ class Pokemon extends Component {
     super(props);
 
     this.state = {
-      id: props.match.params.pokemon,
+      name: props.match.params.pokemon,
       data: null,
       encounters: null,
+      error: null,
     };
   }
 
   componentDidMount() {
-    fetch('https://pokeapi.co/api/v2/pokemon/' + this.state.id)
+    fetch('https://pokeapi.co/api/v2/pokemon/' + this.state.name)
       .then((response) => response.json())
-      .then((data) => this.setState({ data }));
-  }
-
-  fetchEncounters() {
-    fetch('https://pokeapi.co/api/v2/pokemon/' + this.state.id + '/encounters')
-      .then((response) => response.json())
-      .then((encounters) => this.setState({ encounters }));
+      .catch((error) => this.setState({ error }))
+      .then((data) => this.setState({ data }))
+      .catch((error) => console.log('b ' + error));
   }
 
   render() {
+    if (this.state.error) {
+      return (
+        <div className="pokemon-container">
+          <h1 className="pokemon-header">Sorry, can't catch that Pokemon ...</h1>
+        </div>
+      );
+    }
     if (!this.state.data) {
       return (
         <div className="pokemon-container">
@@ -35,7 +39,6 @@ class Pokemon extends Component {
     const name = this.state.data.name.replace(/\w\S*/g, function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
-    console.log(this.state.data);
     const types = this.state.data.types;
     return (
       <div className="pokemon">

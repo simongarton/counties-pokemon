@@ -25,3 +25,13 @@ a:hover {
 a:active {
   color: rgba(60, 110, 170, 1);
 }
+
+ul {
+  list-style: none;
+}
+
+li:before {
+  content: '-';
+  margin-left: -20px;
+  margin-right: 10px;
+}

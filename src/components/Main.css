@@ -1,6 +1,16 @@
-.main {
-  text-align: center;
+.container {
   background-color: white;
+}
+
+.main {
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}
+
+.rest {
+  position: relative;
+  top: 100px;
 }
 
 .main-logo {
@@ -14,6 +24,7 @@
 }
 
 .main-list {
+  margin-left: 50px;
   color: rgb(200, 150, 20);
   text-align: left;
   font-size: 2vh;
